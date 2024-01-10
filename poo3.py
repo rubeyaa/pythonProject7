@@ -1,4 +1,5 @@
 #créé en 2023
+#Créé par Adam Rubeya
 #POO num 2
 import random
 def dé():
@@ -37,20 +38,23 @@ class Héros(NPC):
     def attaquer(self, cible):
         npc.subir(random.randint(1,6))
         de = random.randint(1, 20)
-        de8 = random.randint(1, 8)
-        de6 = random.randint(1, 6)
+        de8 = random.randint(1,8)
         if de == 1:
             print("vous avez échouez.")
         elif de == 20:
             print("votre attaque a réussi")
-            de8
+            cible.subir(random.randint(1,8))
+            def subir(self, dommage):
+                self.pv -= dommage
         elif de ==[2,19]:
-            if de > self.classearmure:
-                print("vous avez réussi")
-                de6
-                
-            elif de < self.classearmure:
+            if de < self.classearmure:
                 print("vous avez échoué")
+            elif de > self.classearmure:
+                print("vous avez réussi")
+                cible.subir(random.randint(1,6))
+    def subir(self, dommage):
+        self.pv -= dommage
+
 
 
 
